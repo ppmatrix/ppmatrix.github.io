@@ -1,0 +1,32 @@
+---
+layout: post
+title: thm Kenobi
+categories: [TryHackMe, CTF, CyberSecurity]
+tags: [CTF, thm, rooms, hacking]
+---
+[room](https://tryhackme.com/room/kenobi)
+
+<span style="color:#a4f8f6;">
+This room will cover accessing a Samba share, manipulating a vulnerable version of proftpd to gain initial access and escalate your privileges to root via an SUID binary.
+
+### Task 1: Deploy the vulnerable machine
+
+#### Questions:
+Q1. Make sure you're connected to our network and deploy the machine
+
+```shell
+No answer needed
+```
+Q2. Scan the machine with nmap, how many ports are open?
+```shell
+7
+```
+</span>
+<span style="color:#edfdb3;">
+### MyWalk
+
+As usual start with a nmap scan:
+```bash
+nmap -T4 -sC -sV -Pn -oN nmap/initial 10.10.226.246
+```
+Number of open ports: 7. Q2 done
