@@ -9,8 +9,7 @@ y { color: Yellow }
 g { color: Green }
 </style>
 
-[room](https://tryhackme.com/room/kenobi)
-This room will cover accessing a Samba share, manipulating a vulnerable version of proftpd to gain initial access and escalate your privileges to root via an SUID binary.
+This [room](https://tryhackme.com/room/kenobi) will cover accessing a Samba share, manipulating a vulnerable version of proftpd to gain initial access and escalate your privileges to root via an SUID binary.
 ### Task 1: Deploy the vulnerable machine
 #### Questions:
 Q1. Make sure you're connected to our network and deploy the machine  
@@ -26,7 +25,7 @@ Count number of open ports. Q2 done
 #### Questions:
 Q1. Using nmap we can enumerate a machine for SMB shares.  
 Nmap has the ability to run to automate a wide variety of networking tasks.   There is a script to enumerate shares!
-<y>nmap</y> -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse MACHINE_IP  
+nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse MACHINE_IP  
 SMB has two ports, 445 and 139.  
 ![image info](./assets/bkgVNy3.png)  
 Using the nmap command above, how many shares have been found?  
