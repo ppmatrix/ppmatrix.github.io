@@ -25,8 +25,6 @@ nmap -T4 -sC -sV -Pn -oN nmap/initial 10.10.226.246
 ```
 Count number of open ports. Q2 done
 
-<
-
 <style>
 r { color: Red }
 o { color: Orange }
