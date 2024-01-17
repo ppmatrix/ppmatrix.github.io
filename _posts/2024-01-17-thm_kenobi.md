@@ -5,10 +5,6 @@ categories: [CyberSecurity]
 tags: [CTF, thm, easy, nmap]
 ---
 <style>
-b { color: Blue }
-r { color: Red }
-o { color: Orange }
-g { color: Green }
 y { color: Yellow }
 </style>
 
