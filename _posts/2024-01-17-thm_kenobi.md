@@ -14,14 +14,10 @@ This room will cover accessing a Samba share, manipulating a vulnerable version 
 
 #### Questions:
 
-<span style="color:#f35d40;">
-
 Q1. Make sure you're connected to our network and deploy the machine\
 Q2. Scan the machine with nmap, how many ports are open?  
 
 ### MyWalk
-
-<span style="color:#fcf2a8;">
 
 As usual start with a nmap scan:
 ```bash
@@ -29,4 +25,16 @@ nmap -T4 -sC -sV -Pn -oN nmap/initial 10.10.226.246
 ```
 Count number of open ports. Q2 done
 
-</span>
+<
+
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
+
+# TODOs:
+
+- <r>TODO:</r> Important thing to do  
+- <o>TODO:</o> Less important thing to do  
+- <g>DONE:</g> Breath deeply and improve karma  
