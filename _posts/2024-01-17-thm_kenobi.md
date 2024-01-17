@@ -3,7 +3,6 @@ r { color: Red }
 o { color: Orange }
 g { color: Green }
 </style>
-
 ---
 layout: post
 title: Kenobi
