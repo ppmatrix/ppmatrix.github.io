@@ -9,13 +9,14 @@ b { color: Blue }
 r { color: Red }
 o { color: Orange }
 g { color: Green }
+y { color: Yellow }
 </style>
 
 [room](https://tryhackme.com/room/kenobi)
 
-<b>This room will cover accessing a Samba share, manipulating a vulnerable version of proftpd to gain initial access and escalate your privileges to root via an SUID binary.</b>
+This room will cover accessing a Samba share, manipulating a vulnerable version of proftpd to gain initial access and escalate your privileges to root via an SUID binary.
 
-<b>### Task 1: Deploy the vulnerable machine</b>
+<y>### Task 1: Deploy the vulnerable machine</y>
 
 <o>#### Questions:</o>
 
@@ -25,7 +26,7 @@ Q2. Scan the machine with nmap, how many ports are open?
 
 <g>### MyWalk</g>
 
-As usual start with a nmap scan:
+As usual start with a <y>nmap</y> scan:
 ```bash
 nmap -T4 -sC -sV -Pn -oN nmap/initial 10.10.226.246
 ```
