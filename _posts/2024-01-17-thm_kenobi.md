@@ -16,7 +16,8 @@ y { color: Yellow }
 
 This room will cover accessing a Samba share, manipulating a vulnerable version of proftpd to gain initial access and escalate your privileges to root via an SUID binary.
 
-<y>### Task 1: Deploy the vulnerable machine</y>  
+<y>### Task 1: Deploy the vulnerable machine</y>
+
 
 <o>#### Questions:</o>
 
@@ -31,16 +32,3 @@ As usual start with a <y>nmap</y> scan:
 nmap -T4 -sC -sV -Pn -oN nmap/initial 10.10.226.246
 ```
 Count number of open ports. Q2 done
-
-
-# TODOs:
-
-- <r>TODO:</r> Important thing to do  
-- <o>TODO:</o> Less important thing to do  
-- <g>DONE:</g> Breath deeply and improve karma  
-
-> :warning: **Warning:** Do not push the big red button.
-
-> :memo: **Note:** Sunrises are beautiful.
-
-> :bulb: **Tip:** Remember to appreciate the little things in life.
