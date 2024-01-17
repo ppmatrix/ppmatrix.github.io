@@ -14,12 +14,12 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: ppmatrix SCK                          # the main title
+title: ppmatrix CSK                          # the main title
 
-tagline: Docs & CTFs   # it will display as the sub-title
+tagline: Doc's & CTF's   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Docs & CTFs.
+  Doc's & CTF's.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://ppmatrix.github.io'
