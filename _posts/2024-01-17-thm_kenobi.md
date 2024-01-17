@@ -38,3 +38,9 @@ Count number of open ports. Q2 done
 - <r>TODO:</r> Important thing to do  
 - <o>TODO:</o> Less important thing to do  
 - <g>DONE:</g> Breath deeply and improve karma  
+
+> :warning: **Warning:** Do not push the big red button.
+
+> :memo: **Note:** Sunrises are beautiful.
+
+> :bulb: **Tip:** Remember to appreciate the little things in life.
