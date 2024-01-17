@@ -16,8 +16,8 @@ This room will cover accessing a Samba share, manipulating a vulnerable version 
 
 <span style="color:#f35d40;">
 
-Q1. Make sure you're connected to our network and deploy the machine
-
+Q1. Make sure you're connected to our network and deploy the machine\
+Q2. Scan the machine with nmap, how many ports are open?  
 Q2. Scan the machine with nmap, how many ports are open?
 
 </span>
