@@ -1,8 +1,8 @@
 ---
 layout: post
-title: thm Kenobi
-categories: [TryHackMe, CTF, CyberSecurity]
-tags: [CTF, thm, rooms, hacking]
+title: Kenobi
+categories: [CyberSecurity]
+tags: [CTF, thm, easy, nmap]
 ---
 [room](https://tryhackme.com/room/kenobi)
 
@@ -13,14 +13,7 @@ This room will cover accessing a Samba share, manipulating a vulnerable version 
 
 #### Questions:
 Q1. Make sure you're connected to our network and deploy the machine
-
-```shell
-No answer needed
-```
 Q2. Scan the machine with nmap, how many ports are open?
-```shell
-7
-```
 </span>
 <span style="color:#edfdb3;">
 ### MyWalk
@@ -29,4 +22,4 @@ As usual start with a nmap scan:
 ```bash
 nmap -T4 -sC -sV -Pn -oN nmap/initial 10.10.226.246
 ```
-Number of open ports: 7. Q2 done
+Count number of open ports. Q2 done
