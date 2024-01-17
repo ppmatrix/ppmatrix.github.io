@@ -18,7 +18,6 @@ Q1. Make sure you're connected to our network and deploy the machine
 
 Q2. Scan the machine with nmap, how many ports are open?
 </span>
-<span style="color:#edfdb3;">
 ### MyWalk
 <span style="color:#a4f8f6;">
 As usual start with a nmap scan:
