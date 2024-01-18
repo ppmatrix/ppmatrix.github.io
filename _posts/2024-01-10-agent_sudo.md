@@ -141,7 +141,7 @@ ftp>
 
 We can´t see any zip file refered in Q2
 
-After dowloading the 3 files and opened the To_agentJ.txt we got:
+After dowloading the 3 files and opened the To_agentJ.txt we got...
 
 ```
 
@@ -158,6 +158,7 @@ Agent C
 So we need to use **exiftool** to extract login password.
 
 [https://exiftool.org/examples.html](https://exiftool.org/examples.html)
+
 
 ```bash
 └─$ exiftool cute-alien.jpg
