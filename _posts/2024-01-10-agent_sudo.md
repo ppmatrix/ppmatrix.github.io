@@ -56,8 +56,8 @@ Agent R
 it seems Q2 is "user-agent"
 
 The hint for Q3:  
-"You might face problem on using Firefox. Try 'user agent switcher' plugin with user agent: C"  
-So, let's install user agent switcher plugin, and set the user agent as "C". After reloading the page I got:
+"You might face problem on using Firefox. Try 'user agent switcher' plugin with  user agent: C"  
+So, let's install user agent switcher plugin, and set the user agent as "C".  After reloading the page I got:
 ```
 Attention chris,
 
@@ -69,3 +69,39 @@ From,
 Agent R
 ```
 Now we know the Q3
+
+## Task 3: Hash cracking and brute-force
+
+Done enumerate the machine? Time to brute your way out.
+
+### Questions
+Q1. Hint: "Hail hydra!"  
+Q1. FTP password
+
+```
+crystal
+```
+
+Q2. Zip file password
+
+```
+alien
+```
+
+Q3. steg password
+
+```
+Area51
+```
+
+Q4 Who is the other agent (in full name)?
+
+```
+james
+```
+
+Q5 SSH password
+
+```
+hackerrules!
+``
