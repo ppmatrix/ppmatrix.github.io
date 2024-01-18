@@ -183,6 +183,7 @@ Y Cb Cr Sub Sampling : YCbCr4:2:0 (2 2)
 Image Size : 440x501
 Megapixels : 0.220
 ```
+
 ```bash
 └─$ exiftool cutie.png
 ExifTool Version Number : 12.67
