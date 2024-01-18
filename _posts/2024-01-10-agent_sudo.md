@@ -138,3 +138,75 @@ ftp> ls
 226 Directory send OK.
 ftp>
 ```
+
+We can´t see any zip file refered in Q2
+
+After dowloading the 3 files and opened the To_agentJ.txt we got:
+
+```
+
+Dear agent J,
+
+All these alien like photos are fake! Agent R stored the real picture inside your directory. Your login password is somehow stored in the fake picture. It shouldn't be a problem for you.
+
+From,
+
+Agent C
+
+```
+
+So we need to use **exiftool** to extract login password.
+
+[https://exiftool.org/examples.html](https://exiftool.org/examples.html)
+
+```bash
+└─$ exiftool cute-alien.jpg
+ExifTool Version Number : 12.67
+File Name : cute-alien.jpg
+Directory : .
+File Size : 33 kB
+File Modification Date/Time : 2019:10:29 08:22:37-04:00
+File Access Date/Time : 2024:01:10 11:49:00-05:00
+File Inode Change Date/Time : 2024:01:10 11:49:00-05:00
+File Permissions : -rw-r--r--
+File Type : JPEG
+File Type Extension : jpg
+MIME Type : image/jpeg
+JFIF Version : 1.01
+Resolution Unit : inches
+X Resolution : 96
+Y Resolution : 96
+Image Width : 440
+Image Height : 501
+Encoding Process : Baseline DCT, Huffman coding
+Bits Per Sample : 8
+Color Components : 3
+Y Cb Cr Sub Sampling : YCbCr4:2:0 (2 2)
+Image Size : 440x501
+Megapixels : 0.220
+
+└─$ exiftool cutie.png
+ExifTool Version Number : 12.67
+File Name : cutie.png
+Directory : .
+File Size : 35 kB
+File Modification Date/Time : 2019:10:29 08:33:51-04:00
+File Access Date/Time : 2024:01:10 11:49:17-05:00
+File Inode Change Date/Time : 2024:01:10 11:49:17-05:00
+File Permissions : -rw-r--r--
+File Type : PNG
+File Type Extension : png
+MIME Type : image/png
+Image Width : 528
+Image Height : 528
+Bit Depth : 8
+Color Type : Palette
+Compression : Deflate/Inflate
+Filter : Adaptive
+Interlace : Noninterlaced
+Palette : (Binary data 762 bytes, use -b option to extract)
+Transparency : (Binary data 42 bytes, use -b option to extract)
+Warning : [minor] Trailer data after PNG IEND chunk
+Image Size : 528x528
+Megapixels : 0.279
+```
