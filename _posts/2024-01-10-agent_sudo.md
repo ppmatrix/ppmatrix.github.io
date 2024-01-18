@@ -144,7 +144,6 @@ We can´t see any zip file refered in Q2
 After dowloading the 3 files and opened the To_agentJ.txt we got...
 
 ```
-
 Dear agent J,
 
 All these alien like photos are fake! Agent R stored the real picture inside your directory. Your login password is somehow stored in the fake picture. It shouldn't be a problem for you.
@@ -152,7 +151,6 @@ All these alien like photos are fake! Agent R stored the real picture inside you
 From,
 
 Agent C
-
 ```
 
 So we need to use **exiftool** to extract login password.
