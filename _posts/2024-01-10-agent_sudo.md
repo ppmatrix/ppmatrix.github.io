@@ -157,3 +157,29 @@ So we need to use **exiftool** to extract login password.
 [https://exiftool.org/examples.html](https://exiftool.org/examples.html)
 
 
+```bash
+└─$ exiftool cute-alien.jpg
+ExifTool Version Number : 12.67
+File Name : cute-alien.jpg
+Directory : .
+File Size : 33 kB
+File Modification Date/Time : 2019:10:29 08:22:37-04:00
+File Access Date/Time : 2024:01:10 11:49:00-05:00
+File Inode Change Date/Time : 2024:01:10 11:49:00-05:00
+File Permissions : -rw-r--r--
+File Type : JPEG
+File Type Extension : jpg
+MIME Type : image/jpeg
+JFIF Version : 1.01
+Resolution Unit : inches
+X Resolution : 96
+Y Resolution : 96
+Image Width : 440
+Image Height : 501
+Encoding Process : Baseline DCT, Huffman coding
+Bits Per Sample : 8
+Color Components : 3
+Y Cb Cr Sub Sampling : YCbCr4:2:0 (2 2)
+Image Size : 440x501
+Megapixels : 0.220
+```
