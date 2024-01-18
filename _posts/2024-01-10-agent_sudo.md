@@ -183,3 +183,29 @@ Y Cb Cr Sub Sampling : YCbCr4:2:0 (2 2)
 Image Size : 440x501
 Megapixels : 0.220
 ```
+```bash
+└─$ exiftool cutie.png
+ExifTool Version Number : 12.67
+File Name : cutie.png
+Directory : .
+File Size : 35 kB
+File Modification Date/Time : 2019:10:29 08:33:51-04:00
+File Access Date/Time : 2024:01:10 11:49:17-05:00
+File Inode Change Date/Time : 2024:01:10 11:49:17-05:00
+File Permissions : -rw-r--r--
+File Type : PNG
+File Type Extension : png
+MIME Type : image/png
+Image Width : 528
+Image Height : 528
+Bit Depth : 8
+Color Type : Palette
+Compression : Deflate/Inflate
+Filter : Adaptive
+Interlace : Noninterlaced
+Palette : (Binary data 762 bytes, use -b option to extract)
+Transparency : (Binary data 42 bytes, use -b option to extract)
+Warning : [minor] Trailer data after PNG IEND chunk
+Image Size : 528x528
+Megapixels : 0.279
+```
