@@ -210,3 +210,36 @@ Warning : [minor] Trailer data after PNG IEND chunk
 Image Size : 528x528
 Megapixels : 0.279
 ```
+Aparently, no useful info!
+
+Tried the -b option to extract binaries and the interesting info is: "Trailer data after PNG IEND chunk528 5280.278784".  
+Found this site: [https://afnom.net/wtctf/2019/magic/](https://afnom.net/wtctf/2019/magic/)  
+after installing **xxd**, tried:
+
+```bash
+xxd cutie.png
+```
+
+At the end of the file, found...  
+
+```bash
+000086f0: 2ec1 e5de 8c38 0000 0000 4945 4e44 ae42 .....8....IEND.B
+00008700: 6082 504b 0304 3303 0100 6300 a6a3 5d4f `.PK..3...c...]O
+00008710: 0000 0000 6200 0000 5600 0000 0d00 0b00 ....b...V.......
+00008720: 546f 5f61 6765 6e74 522e 7478 7401 9907 To_agentR.txt...
+00008730: 0002 0041 4501 0800 4673 cae7 1457 9045 ...AE...Fs...W.E
+00008740: 67aa 61c4 cf3a f94e 649f 827e 5964 ce57 g.a..:.Nd..~Yd.W
+00008750: 5c5f 7a23 9c48 fb99 2c8e a8cb ffe5 1d03 \_z#.H..,.......
+00008760: 755e 0ca8 61a5 a3dc babf a618 784b 8507 u^..a.......xK..
+00008770: 5f0e f476 c6da 8261 805b d0a4 309d b388 _..v...a.[..0...
+00008780: 35ad 3261 3e3d c5d7 e87c 0f91 c0b5 e64e 5.2a>=...|.....N
+00008790: 4969 f382 486c b676 7ae6 504b 0102 3f03 Ii..Hl.vz.PK..?.
+000087a0: 3303 0100 6300 a6a3 5d4f 0000 0000 6200 3...c...]O....b.
+000087b0: 0000 5600 0000 0d00 2f00 0000 0000 0000 ..V...../.......
+000087c0: 2080 a481 0000 0000 546f 5f61 6765 6e74 .......To_agent
+000087d0: 522e 7478 740a 0020 0000 0000 0001 0018 R.txt.. ........
+000087e0: 0080 4577 7754 8ed5 0100 65da d354 8ed5 ..EwwT....e..T..
+000087f0: 0100 65da d354 8ed5 0101 9907 0002 0041 ..e..T.........A
+00008800: 4501 0800 504b 0506 0000 0000 0100 0100 E...PK..........
+00008810: 6a00 0000 9800 0000 0000 j.........
+```
