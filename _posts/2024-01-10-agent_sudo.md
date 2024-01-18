@@ -55,12 +55,9 @@ Agent R
 ```
 it seems Q2 is "user-agent"
 
-The hint for Q3:
-
-"You might face problem on using Firefox. Try 'user agent switcher' plugin with user agent: C"
-
+The hint for Q3:  
+"You might face problem on using Firefox. Try 'user agent switcher' plugin with user agent: C"  
 So, let's install user agent switcher plugin, and set the user agent as "C". After reloading the page I got:
-
 ```
 Attention chris,
 
