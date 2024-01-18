@@ -257,3 +257,31 @@ DECIMAL HEXADECIMAL DESCRIPTION
 34562 0x8702 Zip archive data, encrypted compressed size: 98, uncompressed size: 86, name: To_agentR.txt
 34820 0x8804 End of Zip archive, footer length: 22
 ```
+
+Now with **-e** option:
+
+```bash
+└─$ binwalk -e cutie.png
+DECIMAL HEXADECIMAL DESCRIPTION
+--------------------------------------------------------------------------------
+0 0x0 PNG image, 528 x 528, 8-bit colormap, non-interlaced
+869 0x365 Zlib compressed data, best compression
+WARNING: Extractor.execute failed to run external extractor 'jar xvf '%e'': [Errno 2] No such file or directory: 'jar', 'jar xvf '%e'' might not be installed correctly
+34562 0x8702 Zip archive data, encrypted compressed size: 98, uncompressed size: 86, name: To_agentR.txt
+34820 0x8804 End of Zip archive, footer length: 22
+┌──(kali㉿kali)-[~/…/hellbender/thm/rooms/Agent Sudo]
+└─$ ll
+total 96
+-rw-r--r-- 1 kali kali 6678 Jan 10 13:36 agent_sudo.md
+-rw-r--r-- 1 kali kali 33143 Jan 10 13:36 cute-alien.jpg
+-rw-r--r-- 1 kali kali 34842 Jan 10 13:36 cutie.png
+drwxr-xr-x 2 kali kali 4096 Jan 10 14:19 _cutie.png.extracted
+-rw-r--r-- 1 kali kali 1072 Jan 10 13:36 gobuster.txt
+drwxr-xr-x 2 kali kali 4096 Jan 10 13:36 nmap
+-rw-r--r-- 1 kali kali 217 Jan 10 13:36 To_agentJ.txt
+┌──(kali㉿kali)-[~/…/hellbender/thm/rooms/Agent Sudo]
+└─$ cd _cutie.png.extracted
+┌──(kali㉿kali)-[~/…/thm/rooms/Agent Sudo/_cutie.png.extracted]
+└─$ ls
+365 365.zlib 8702.zip To_agentR.txt
+```
