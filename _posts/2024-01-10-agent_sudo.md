@@ -154,7 +154,7 @@ Agent C
 
 So we need to use **exiftool** to extract login password.
 
-[https://exiftool.org/examples.html](https://exiftool.org/examples.html)
+[https://exiftool.org/examples.html](https://exiftool.org/examples.html)  
 
 
 ```bash
