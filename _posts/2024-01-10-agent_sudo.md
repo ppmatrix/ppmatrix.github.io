@@ -243,3 +243,17 @@ At the end of the file, found...
 00008800: 4501 0800 504b 0506 0000 0000 0100 0100 E...PK..........
 00008810: 6a00 0000 9800 0000 0000 j.........
 ```
+
+To_agentR.txt
+
+Lets use **binwalk** to extract this txt file from the cutie.png...
+
+```bash
+└─$ binwalk cutie.png
+DECIMAL HEXADECIMAL DESCRIPTION
+--------------------------------------------------------------------------------
+0 0x0 PNG image, 528 x 528, 8-bit colormap, non-interlaced
+869 0x365 Zlib compressed data, best compression
+34562 0x8702 Zip archive data, encrypted compressed size: 98, uncompressed size: 86, name: To_agentR.txt
+34820 0x8804 End of Zip archive, footer length: 22
+```
