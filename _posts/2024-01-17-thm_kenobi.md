@@ -9,7 +9,9 @@ y { color: Yellow }
 g { color: Green }
 </style>
 
-This [room](https://tryhackme.com/room/kenobi) will cover accessing a Samba share, manipulating a vulnerable version of proftpd to gain initial access and escalate your privileges to root via an SUID binary.
+-[https://tryhackme.com/room/kenobi](https://tryhackme.com/room/kenobi)
+
+This room will cover accessing a Samba share, manipulating a vulnerable version of proftpd to gain initial access and escalate your privileges to root via an SUID binary.
 ### Task 1: Deploy the vulnerable machine
 #### Questions:
 Q1. Make sure you're connected to our network and deploy the machine  
