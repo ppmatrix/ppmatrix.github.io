@@ -6,7 +6,8 @@ tags: [CTF, thm, easy, nmap]
 ---
 ![Kenobi](./assets/kenobi.png){: .left }{: w="200" h="200" }
 ## Walkthrough
-[https://tryhackme.com/room/kenobi](https://tryhackme.com/room/kenobi)/
+[https://tryhackme.com/room/kenobi](https://tryhackme.com/room/kenobi)
+
 This room will cover accessing a Samba share, manipulating a vulnerable version of proftpd to gain initial access and escalate your privileges to root via an SUID binary.
 ## Task 1: Deploy the vulnerable machine
 ### Questions:
