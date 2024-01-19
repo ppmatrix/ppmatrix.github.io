@@ -429,5 +429,63 @@ james@agent-sudo:~$ ls
 Alien_autospy.jpg user_flag.txt
 james@agent-sudo:~$
 ```
-
 Q5 done
+
+ls give us 2 files, maybe useful on next task.
+
+
+## Task 4: Capture the user flag
+You know the drill.
+
+### Questions
+Q1 What is the user flag?
+
+```bash
+b03d975e8c92a7c04146cfa7a5a313c7
+```
+
+Q2 What is the incident of the photo called?
+
+```bash
+roswell alien autopsy
+```
+
+### MyWalk
+
+Reading the user_flag.txt
+```bash
+james@agent-sudo:~$ ls
+Alien_autospy.jpg user_flag.txt
+james@agent-sudo:~$ cat user_flag.txt
+b03d975e8c92a7c04146cfa7a5a313c7
+```
+
+Q1 done
+
+Hint for Q2: 'Reverse image and Foxnews'
+
+Lets download the image file:
+```bash
+scp james@10.10.76.44:Alien_autospy.jpg ~/Desktop/hellbender/thm/rooms/Agent\ Sudo
+```
+Q2 Done
+
+## Task 5 Privilege escalation
+Enough with the extraordinary stuff? Time to get real.
+
+### Questions
+ 
+CVE number for the escalation (Format: CVE-xxxx-xxxx)
+```bash
+
+```
+Q3 What is the root flag?
+
+```bash
+b53a02f55b57d4439e3341834d70c062
+```
+
+Q4 (Bonus) Who is Agent R?
+
+```bash
+Deske
