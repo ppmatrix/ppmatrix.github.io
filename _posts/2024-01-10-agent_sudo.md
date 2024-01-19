@@ -4,7 +4,7 @@ title: Agent Sudo
 categories: [CyberSecurity, CTF]
 tags: [thm, easy, nmap, gobuster, hydra, exiftool, xxd, binwalk, zip2john, JohnTheRipper, 7z, Cyberchef, steghide]
 ---
-![Agent Sudo](./assets/agentsudo.png){: .left } 
+![Agent Sudo](./assets/agentsudo.png){: .left w="200" h="200"} 
 
 - [https://tryhackme.com/room/agentsudoctf](https://tryhackme.com/room/agentsudoctf)
 
