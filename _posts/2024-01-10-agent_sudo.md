@@ -6,8 +6,7 @@ tags: [thm, easy, nmap, gobuster, hydra, exiftool, xxd, binwalk, zip2john, JohnT
 ---
 ![Agent Sudo](./assets/agentsudo.png){: .left }{: w="200" h="200" }
 ## Walkthrough
-- [https://tryhackme.com/room/agentsudoctf](https://tryhackme.com/room/agentsudoctf)
-
+[https://tryhackme.com/room/agentsudoctf][def]
 ## Task 1: Author Note
 Welcome to another THM exclusive CTF room. Your task is simple, capture the flags just like the other CTF room. Have Fun!
 
@@ -553,3 +552,5 @@ Finally we have Q2 and Q3 also.
 - 7z
 - cyberchef
 - steghide
+
+[def]: https://tryhackme.com/room/agentsudoctf
