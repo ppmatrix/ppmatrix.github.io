@@ -285,3 +285,68 @@ drwxr-xr-x 2 kali kali 4096 Jan 10 13:36 nmap
 └─$ ls
 365 365.zlib 8702.zip To_agentR.txt
 ```
+ok we have now 3 files extracted! But the text file is empty and zip file is encrypted, At this point we may try to get the password by using **zip2john** and then use **john** to crack the hash...
+
+```bash
+┌──(kali㉿kali)-[~/…/thm/rooms/Agent Sudo/_cutie.png.extracted]
+└─$ zip2john 8702.zip > zip.hash
+┌──(kali㉿kali)-[~/…/thm/rooms/Agent Sudo/_cutie.png.extracted]
+└─$ ll
+total 320
+-rw-r--r-- 1 kali kali 279312 Jan 10 14:19 365
+-rw-r--r-- 1 kali kali 33973 Jan 10 14:19 365.zlib
+-rw-r--r-- 1 kali kali 280 Jan 10 14:19 8702.zip
+-rw-r--r-- 1 kali kali 0 Oct 29 2019 To_agentR.txt
+-rw-r--r-- 1 kali kali 279 Jan 10 14:27 zip.hash
+┌──(kali㉿kali)-[~/…/thm/rooms/Agent Sudo/_cutie.png.extracted]
+└─$ john zip.hash
+Using default input encoding: UTF-8
+Loaded 1 password hash (ZIP, WinZip [PBKDF2-SHA1 256/256 AVX2 8x])
+Cost 1 (HMAC size) is 78 for all loaded hashes
+Will run 4 OpenMP threads
+Proceeding with single, rules:Single
+Press 'q' or Ctrl-C to abort, almost any other key for status
+Almost done: Processing the remaining buffered candidate passwords, if any.
+Proceeding with wordlist:/usr/share/john/password.lst
+alien (8702.zip/To_agentR.txt)
+1g 0:00:00:00 DONE 2/3 (2024-01-10 14:28) 1.063g/s 48372p/s 48372c/s 48372C/s 123456..ferrises
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed.
+```
+
+We have now the zip password: "alien". Now we can unzip it with **7z**..
+
+```bash
+┌──(kali㉿kali)-[~/…/thm/rooms/Agent Sudo/_cutie.png.extracted]
+└─$ 7z e 8702.zip
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz (906E9),ASM,AES-NI)
+Scanning the drive for archives:
+1 file, 280 bytes (1 KiB)
+Extracting archive: 8702.zip
+--
+Path = 8702.zip
+Type = zip
+Physical Size = 280
+Would you like to replace the existing file:
+Path: ./To_agentR.txt
+Size: 0 bytes
+Modified: 2019-10-29 07:29:11
+with the file from archive:
+Path: To_agentR.txt
+Size: 86 bytes (1 KiB)
+Modified: 2019-10-29 07:29:11
+? (Y)es / (N)o / (A)lways / (S)kip all / A(u)to rename all / (Q)uit? Y
+Enter password (will not be echoed):
+Everything is Ok
+Size: 86
+Compressed: 280
+┌──(kali㉿kali)-[~/…/thm/rooms/Agent Sudo/_cutie.png.extracted]
+└─$ ll
+total 324
+-rw-r--r-- 1 kali kali 279312 Jan 10 14:19 365
+-rw-r--r-- 1 kali kali 33973 Jan 10 14:19 365.zlib
+-rw-r--r-- 1 kali kali 280 Jan 10 14:19 8702.zip
+-rw-r--r-- 1 kali kali 86 Oct 29 2019 To_agentR.txt
+-rw-r--r-- 1 kali kali 279 Jan 10 14:27 zip.hash
+```
