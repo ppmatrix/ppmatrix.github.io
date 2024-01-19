@@ -4,6 +4,7 @@ title: Kenobi
 categories: [CyberSecurity]
 tags: [CTF, thm, easy, nmap]
 ---
+Walkthrough
 ![Kenobi](./assets/kenobi.png){: .left }{: w="200" h="200" }
 
 [https://tryhackme.com/room/kenobi](https://tryhackme.com/room/kenobi)
