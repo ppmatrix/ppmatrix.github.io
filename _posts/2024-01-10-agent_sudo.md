@@ -258,7 +258,7 @@ DECIMAL HEXADECIMAL DESCRIPTION
 34820 0x8804 End of Zip archive, footer length: 22
 ```
 
-Now with **-e** option:
+Now with **-e** option...
 
 ```bash
 └─$ binwalk -e cutie.png
