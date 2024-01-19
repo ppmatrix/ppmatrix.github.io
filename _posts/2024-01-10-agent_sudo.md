@@ -350,3 +350,84 @@ total 324
 -rw-r--r-- 1 kali kali 86 Oct 29 2019 To_agentR.txt
 -rw-r--r-- 1 kali kali 279 Jan 10 14:27 zip.hash
 ```
+
+Look into the To_agentR.txt:
+```bash
+└─$ cat To_agentR.txt
+Agent C,
+
+We need to send the picture to 'QXJlYTUx' as soon as possible!
+
+By,
+
+Agent R
+```
+
+We can now answer Q2 (alien)
+
+Also 'QXJlYTUx' seems somehow encryted, lets use **cyberchef**:
+
+The Magic Recipe returned 'Area51'
+
+The only file left is cute-alien.jpg. the tool **steghide** is often used to hide data inside of jpg files. Maybe there's some file hidden and the quastion Q3 about the steg password.
+
+Confirmed Q3 as 'Area51'
+
+Now lets try **steghide** on cutie-alien.jpg. If password is aked we'll use 'Area51'
+
+```bash
+└─$ steghide info cute-alien.jpg
+"cute-alien.jpg":
+format: jpeg
+capacity: 1.8 KB
+Try to get information about embedded data ? (y/n) y
+Enter passphrase:
+embedded file "message.txt":
+size: 181.0 Byte
+encrypted: rijndael-128, cbc
+compressed: yes
+```
+One embedded file confirmed, message.txt. Now lets extract the file and read it...
+```bash
+└─$ steghide extract -sf cute-alien.jpg
+Enter passphrase:
+wrote extracted data to "message.txt".
+┌──(kali㉿kali)-[~/…/hellbender/thm/rooms/Agent Sudo]
+└─$ cat message.txt
+Hi james,
+
+Glad you find this message. Your login password is hackerrules!
+
+Don't ask me why the password look cheesy, ask agent R who set this password for you.
+
+Your buddy,
+
+chris
+```
+we got a user 'james' and a password 'hackerrules!'
+
+Lets confirm the password on SSH, as the Q5 is asking for a SSH password
+
+```bash
+└─$ ssh james@10.10.211.42
+james@10.10.211.42's password:
+Permission denied, please try again.
+james@10.10.211.42's password:
+Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-55-generic x86_64)
+* Documentation: https://help.ubuntu.com
+* Management: https://landscape.canonical.com
+* Support: https://ubuntu.com/advantage
+System information as of Wed Jan 10 20:18:55 UTC 2024
+System load: 0.13 Processes: 95
+Usage of /: 39.7% of 9.78GB Users logged in: 0
+Memory usage: 16% IP address for eth0: 10.10.211.42
+Swap usage: 0%
+75 packages can be updated.
+33 updates are security updates.
+Last login: Tue Oct 29 14:26:27 2019
+james@agent-sudo:~$ ls
+Alien_autospy.jpg user_flag.txt
+james@agent-sudo:~$
+```
+
+Q5 done
