@@ -20,7 +20,7 @@ Enumerate the machine and get all the important information
 
 Q1 How many opens Ports?
 ```
-3
+<span style="color:black;">3</span>
 ```
 Q2 How you redirect yourself to a secret page?
 ```
