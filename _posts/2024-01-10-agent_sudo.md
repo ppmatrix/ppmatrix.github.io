@@ -22,15 +22,15 @@ Enumerate the machine and get all the important information
 
 Q1 How many opens Ports?
 
-> 3
+> "3"
 
 Q2 How you redirect yourself to a secret page?
 
-> user-agent
+> "user-agent"
 
 Q3 What is the agent name?
 
-> chris
+> "chris"
 
 ### MyWalk
 
@@ -84,23 +84,23 @@ Done enumerate the machine? Time to brute your way out.
 Q1. Hint: "Hail hydra!"  
 Q1. FTP password
 
-> crystal
+> "crystal"
 
 Q2. Zip file password
 
-> alien
+> "alien"
 
 Q3. steg password
 
-> Area51
+> "Area51"
 
 Q4 Who is the other agent (in full name)?
 
-> james
+> "james"
 
 Q5 SSH password
 
-> hackerrules!
+> "hackerrules!"
 
 ### MyWalk
 
@@ -440,9 +440,9 @@ Q1 What is the user flag?
 
 Q2 What is the incident of the photo called?
 
-```bash
-roswell alien autopsy
-```
+
+> "roswell alien autopsy"
+
 
 ### MyWalk
 
