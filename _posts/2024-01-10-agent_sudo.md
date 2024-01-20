@@ -21,17 +21,17 @@ Enumerate the machine and get all the important information
 ### Questions
 
 Q1 How many opens Ports?
-```
-3
-```
+
+> 3
+
 Q2 How you redirect yourself to a secret page?
-```
-user-agent
-```
+
+> user-agent
+
 Q3 What is the agent name?
-```
-chris
-```
+
+> chris
+
 ### MyWalk
 
 Beginning with an **nmap** scan, and save the results on nmap/initial for future reference:
