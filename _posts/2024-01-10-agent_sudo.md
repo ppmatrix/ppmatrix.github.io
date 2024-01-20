@@ -84,33 +84,33 @@ Done enumerate the machine? Time to brute your way out.
 Q1. Hint: "Hail hydra!"  
 Q1. FTP password
 
-```
-crystal
-```
+
+> crystal
+
 
 Q2. Zip file password
 
-```
-alien
-```
+
+> alien
+
 
 Q3. steg password
 
-```
-Area51
-```
+
+> Area51
+
 
 Q4 Who is the other agent (in full name)?
 
-```
-james
-```
+
+> james
+
 
 Q5 SSH password
 
-```
-hackerrules!
-```
+
+> hackerrules!
+
 
 ### MyWalk
 
