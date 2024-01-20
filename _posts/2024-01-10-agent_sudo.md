@@ -84,7 +84,6 @@ Done enumerate the machine? Time to brute your way out.
 Q1. Hint: "Hail hydra!"  
 Q1. FTP password
 
-
 > crystal
 
 Q2. Zip file password
@@ -437,9 +436,7 @@ You know the drill.
 ### Questions
 Q1 What is the user flag?
 
-```bash
-b03d975e8c92a7c04146cfa7a5a313c7
-```
+> b03d975e8c92a7c04146cfa7a5a313c7
 
 Q2 What is the incident of the photo called?
 
