@@ -444,7 +444,6 @@ Q2 What is the incident of the photo called?
 
 > roswell alien autopsy
 
-
 ### MyWalk
 
 Reading the user_flag.txt
@@ -471,17 +470,20 @@ Enough with the extraordinary stuff? Time to get real.
 ### Questions
  
 CVE number for the escalation (Format: CVE-xxxx-xxxx)
+```bash
 
-> *************
-
+```
 Q3 What is the root flag?
 
-> b53a02f55b57d4439e3341834d70c062
+```bash
+b53a02f55b57d4439e3341834d70c062
+```
 
 Q4 (Bonus) Who is Agent R?
 
-> Deskel
-
+```bash
+Deskel
+```
 
 ### MyWalk
 
