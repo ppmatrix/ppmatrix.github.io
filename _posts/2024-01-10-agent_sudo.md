@@ -436,7 +436,7 @@ You know the drill.
 ### Questions
 Q1 What is the user flag?
 
-> b03d975e8c92a7c04146cfa7a5a313c7
+> "b03d975e8c92a7c04146cfa7a5a313c7"
 
 Q2 What is the incident of the photo called?
 
