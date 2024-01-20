@@ -36,7 +36,7 @@ Q3 What is the agent name?
 
 Beginning with an **nmap** scan, and save the results on nmap/initial for future reference:
 
-```console
+```bash
 nmap -T4 -sC -sV -Pn -oN nmap/initial 10.10.188.70
 ```
 
