@@ -496,21 +496,18 @@ Enough with the extraordinary stuff? Time to get real.
 
 ### Questions
  
-CVE number for the escalation (Format: CVE-xxxx-xxxx)
-```bash
+Q1. CVE number for the escalation (Format: CVE-xxxx-xxxx)
 
-```
-Q3 What is the root flag?
+> "CVE-xxxx-xxxx"
 
-```bash
-b53a02f55b57d4439e3341834d70c062
-```
+Q2 What is the root flag?
 
-Q4 (Bonus) Who is Agent R?
+> "b53a02f55b57d4439e3341834d70c062"
 
-```bash
-Deskel
-```
+Q3 (Bonus) Who is Agent R?
+
+> "Deskel"
+
 
 ### MyWalk
 
