@@ -41,7 +41,7 @@ SMB has two ports, 445 and 139.
 ![image info](./assets/bkgVNy3.png)  
 Using the nmap command above, how many shares have been found?  
 
-### Questions:
+### Questions & MyWalk:
 Q1. Using the nmap command above, how many shares have been found?
 
 > "3"
@@ -92,7 +92,7 @@ Q4. What mount can we see?
 
 ProFtpd is a free and open-source FTP server, compatible with Unix and Windows systems. Its also been vulnerable in the past software versions.
 
-### Questions:
+### Questions & MyWalk:
 
 Lets get the version of ProFtpd. Use netcat to connect to the machine on the FTP port.
 
@@ -198,3 +198,10 @@ d0b0f3f53b6caa532a83915e19224899
 Q5. What is Kenobi's user flag (/home/kenobi/user.txt)?
 
 >  "d0b0f3f53b6caa532a83915e19224899"
+
+
+## Task 3: Privilege Escalation with Path Variable Manipulation 
+
+![image info](./assets/bkgVNy3.png)  
+Lets first understand what what SUID, SGID and Sticky Bits are.  
+![image info](./assets/suid2.png) 
