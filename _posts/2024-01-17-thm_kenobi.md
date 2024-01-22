@@ -2,7 +2,7 @@
 layout: post
 title: Kenobi
 categories: [CyberSecurity]
-tags: [CTF, thm, easy, nmap]
+tags: [CTF, thm, easy, nmap, smb, ProFTPd, SUID]
 ---
 ![Kenobi](./assets/kenobi.png){: .right }{: w="200" h="200" }
 ## Walkthrough
@@ -12,10 +12,10 @@ tags: [CTF, thm, easy, nmap]
 
 This room will cover accessing a Samba share, manipulating a vulnerable version of proftpd to gain initial access and escalate your privileges to root via an SUID binary.
 ## Task 1: Deploy the vulnerable machine
-### Questions:
+### Questions & Walk:
 Q1. Make sure you're connected to our network and deploy the machine  
 Q2. Scan the machine with nmap, how many ports are open?
-### MyWalk
+
 As usual start with a nmap scan:
 ```bash
 nmap -T4 -sC -sV -Pn -oN nmap/initial 10.10.226.246
