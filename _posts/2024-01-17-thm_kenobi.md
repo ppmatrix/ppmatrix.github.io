@@ -12,10 +12,10 @@ tags: [CTF, thm, easy, nmap]
 
 This room will cover accessing a Samba share, manipulating a vulnerable version of proftpd to gain initial access and escalate your privileges to root via an SUID binary.
 ## Task 1: Deploy the vulnerable machine
-### Questions & Walk:
+### Questions:
 Q1. Make sure you're connected to our network and deploy the machine  
 Q2. Scan the machine with nmap, how many ports are open?
-
+### MyWalk
 As usual start with a nmap scan:
 ```bash
 nmap -T4 -sC -sV -Pn -oN nmap/initial 10.10.226.246
@@ -41,7 +41,7 @@ SMB has two ports, 445 and 139.
 ![image info](./assets/bkgVNy3.png)  
 Using the nmap command above, how many shares have been found?  
 
-### Questions & Walk:
+### Questions & MyWalk:
 Q1. Using the nmap command above, how many shares have been found?
 
 > "3"
@@ -92,7 +92,7 @@ Q4. What mount can we see?
 
 ProFtpd is a free and open-source FTP server, compatible with Unix and Windows systems. Its also been vulnerable in the past software versions.
 
-### Questions & Walk:
+### Questions & MyWalk:
 
 Lets get the version of ProFtpd. Use netcat to connect to the machine on the FTP port.
 
@@ -200,13 +200,13 @@ Q5. What is Kenobi's user flag (/home/kenobi/user.txt)?
 >  "d0b0f3f53b6caa532a83915e19224899"
 
 
-## Task 4: Privilege Escalation with Path Variable Manipulation 
+## Task 3: Privilege Escalation with Path Variable Manipulation 
 
 ![image info](./assets/suid.png)  
 Lets first understand what what SUID, SGID and Sticky Bits are.  
 ![image info](./assets/suid2.png) 
 
-### Questions & Walk:
+### Questions & MyWalk:
 
 SUID bits can be dangerous, some binaries such as passwd need to be run with elevated privileges (as its resetting your password on the system), however other custom files could that have the SUID bit can lead to all sorts of issues.
 
