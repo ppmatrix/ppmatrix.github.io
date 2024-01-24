@@ -118,7 +118,7 @@ Just set the RHOSTS, LPORT as 8080 and LHOST as "tun0" or your tun0 IP and start
 Q1 is easy. Q2 and Q3 by searching the "HttpFileServer 2.3".  
 Q4 by navegating to C:/users/bill/Desktop and see the content of user.txt 
 
-## Task 3: Privilegde Escalation
+## Task 3: Privilege Escalation
 
 Now that you have an initial shell on this Windows machine as Bill, we can further enumerate the machine and escalate our privileges to root!
 
