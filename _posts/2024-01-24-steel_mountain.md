@@ -319,7 +319,7 @@ Download the exploit
 
 *Note that you will need to have a web server and a netcat listener active at the same time in order for this to work!*
 
-Now lets setup a listener on another terminal...
+Now lets setup a listener on another terminal:
 
 ```bash
 └─$ nc -lvnp 1234 
