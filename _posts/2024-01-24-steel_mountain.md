@@ -329,7 +329,7 @@ listening on [any] 1234 ...
 
 Edit the exploit file (39161.py) and change the IP Adress and the port where you are listening:
 
-```bash
+```python
 	ip_addr = "192.168.44.128" #local IP address
 	local_port = "4444" # Local Port number
 ```
