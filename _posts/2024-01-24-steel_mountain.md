@@ -312,8 +312,6 @@ For this we will utilise powershell and winPEAS to enumerate the system and coll
 
 ### Questions
 
-
-
 Q1. To begin we shall be using the same CVE. However, this time let's use an exploit from exploit-db.com.
 
 In this site search for "2014-6287". We should get 3 or 4 exploits. Lets choose the one from  Avinash Thapa.  
@@ -321,7 +319,7 @@ Download the exploit
 
 *Note that you will need to have a web server and a netcat listener active at the same time in order for this to work!*
 
-Now lets setup a listener on another terminal:
+Now lets setup a listener on another terminal...
 
 ```bash
 └─$ nc -lvnp 1234 
@@ -331,13 +329,10 @@ listening on [any] 1234 ...
 
 Edit the exploit file (39161.py) and change the IP Adress and the port where you are listening:
 
-```python
+```bash
 	ip_addr = "192.168.44.128" #local IP address
 	local_port = "4444" # Local Port number
 ```
-
-
-
 
 To begin, you will need a netcat static binary on your web server. If you do not have one, you can download it from GitHub!
 
