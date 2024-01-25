@@ -34,11 +34,10 @@ nmap -sV -vv --script vuln 10.10.198.214
 ```
 {: .nolineno }
 
+Try to search for possible vulnerabilities. Found 2.  
 Found this:
 
 ```bash
-Try to search for possible vulnerabilities. Found 2:
-
 PORT      STATE SERVICE            REASON  VERSION
 80/tcp    open  http               syn-ack Microsoft IIS httpd 8.5
 | vulners: 
