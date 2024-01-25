@@ -303,3 +303,45 @@ type root.txt
 Q3. What is the root flag?
 
 > "9af5f314f57607c00fd09803a587db80"
+
+
+## Task 4: Access and Escalation Without Metasploit 
+
+Now let's complete the room without the use of Metasploit.  
+For this we will utilise powershell and winPEAS to enumerate the system and collect the relevant information to escalate to
+
+### Questions
+
+
+
+Q1. To begin we shall be using the same CVE. However, this time let's use an exploit from exploit-db.com.
+
+In this site search for "2014-6287". We should get 3 or 4 exploits. Lets choose the one from  Avinash Thapa.  
+Download the exploit
+
+*Note that you will need to have a web server and a netcat listener active at the same time in order for this to work!*
+
+Now lets setup a listener on another terminal:
+
+```bash
+└─$ nc -lvnp 1234 
+listening on [any] 1234 ...
+```
+{: .nolineno }
+
+Edit the exploit file (39161.py) and change the IP Adress and the port where you are listening:
+
+```python
+	ip_addr = "192.168.44.128" #local IP address
+	local_port = "4444" # Local Port number
+```
+
+
+
+
+To begin, you will need a netcat static binary on your web server. If you do not have one, you can download it from GitHub!
+
+You will need to run the exploit twice. The first time will pull our netcat binary to the system and the second will execute our payload to gain a callback!
+
+> "No answer needed"
+
