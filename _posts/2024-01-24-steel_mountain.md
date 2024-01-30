@@ -20,7 +20,7 @@ Please note that this machine does not respond to ping (ICMP) and may take a few
 
 ### Questions
 
-Q1. Deploy the machine. Who is the emplyee of the month?  
+Q1. Deploy the machine. Who is the employee of the month?  
 Hint: "Reverse image search"
 
 > "Bill Harper"
