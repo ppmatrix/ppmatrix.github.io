@@ -2,7 +2,7 @@
 layout: post
 title: Steel Mountain
 categories: [CyberSecurity, CTF]
-tags: [thm, easy, nmap]
+tags: [thm, easy, nmap, netcat, powershell, meterpreter, msvenom, metasploit winPEAS, CVE-2014-6287]
 ---
 ![Steel Mountain](./assets/steelmountain.png){: .right }{: w="200" h="200" }
 ## Walkthrough
