@@ -4,7 +4,9 @@ title: Vulnversity
 categories: [CyberSecurity, CTF]
 tags: [thm, easy, nmap]
 ---
-![Basic Pentesting](./assets/vulnversity.png){: .right }{: w="200" h="200" }
+
+[//]: # (![Basic Pentesting](./assets/vulnversity.png){: .right }{: w="200" h="200" })
+
 ## Walkthrough
 [https://tryhackme.com/room/vulnversity](https://tryhackme.com/room/vulnversity])
 

@@ -4,7 +4,9 @@ title: Kenobi
 categories: [CyberSecurity]
 tags: [CTF, thm, easy, nmap, smb, ProFTPd, SUID]
 ---
-![Kenobi](./assets/kenobi.png){: .right }{: w="200" h="200" }
+
+[//]: # (![Kenobi](./assets/kenobi.png){: .right }{: w="200" h="200" })
+
 ## Walkthrough
 [https://tryhackme.com/room/kenobi](https://tryhackme.com/room/kenobi)
 
