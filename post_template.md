@@ -4,6 +4,7 @@ title: title_name
 categories: [CyberSecurity, CTF]
 tags: [thm, easy, nmap]
 ---
+![Basic Pentesting](./assets/basicpentesting.png){: .right }{: w="200" h="200" }
 ## Walkthrough
 [https://tryhackme.com/room/roomname](https://link)
 
