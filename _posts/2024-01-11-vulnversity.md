@@ -5,7 +5,7 @@ categories: [CyberSecurity, CTF]
 tags: [thm, easy, nmap]
 ---
 
-![vulnversity](./assets/vulnversity.png){: .right }{: w="200" h="200" }
+![vulnversity](/assets/vulnversity.png){: .right }{: w="200" h="200" }
 
 ## Walkthrough
 [https://tryhackme.com/room/vulnversity](https://tryhackme.com/room/vulnversity])
