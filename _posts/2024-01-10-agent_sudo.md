@@ -5,6 +5,8 @@ categories: [CyberSecurity, CTF]
 tags: [thm, easy, nmap, gobuster, hydra, exiftool, xxd, binwalk, zip2john, JohnTheRipper, 7z, Cyberchef, steghide]
 ---
 
+![Basic Pentesting](/assets/agentsudo.png){: .right }{: w="200" h="200" }
+
 ## Walkthrough
 [https://tryhackme.com/room/agentsudoctf](https://tryhackme.com/room/agentsudoctf)
 
