@@ -5,7 +5,7 @@ categories: [CyberSecurity, CTF]
 tags: [thm, easy, nmap, windows, netcat, powershell, meterpreter, msvenom, metasploit, winPEAS, CVE-2014-6287]
 ---
 
-[//]: # (![Steel Mountain](./assets/steelmountain.png){: .right }{: w="200" h="200" })
+![Steel Mountain](/assets/steelmountain.png){: .right }{: w="200" h="200" }
 
 ## Walkthrough
 [https://tryhackme.com/room/steelmountain](https://tryhackme.com/room/steelmountain)
