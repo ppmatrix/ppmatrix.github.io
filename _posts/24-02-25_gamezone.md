@@ -29,4 +29,3 @@ Q2. What is the name of the large cartoon avatar holding a sniper on the forum?
 
 
 ### MyWalk
-
