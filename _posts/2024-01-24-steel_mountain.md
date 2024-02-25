@@ -86,7 +86,7 @@ I saw port 80 and port 8080 open so visited both pages.
 Visiting the IP:80 webpage shows a person image, looking at the image name, we get the Q1 answer.  
 On the 8080 port we can see the following:
 
-![Steel Mountain](./assets/steelmountain2.png)
+![Steel Mountain](/assets/steelmountain2.png)
 
 
 ## Task 2: Initial Access

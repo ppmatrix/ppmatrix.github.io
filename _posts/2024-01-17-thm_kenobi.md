@@ -40,7 +40,7 @@ nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse MACHINE_IP
 SMB has two ports, 445 and 139.
 
 SMB has two ports, 445 and 139.  
-![image info](./assets/bkgVNy3.png)  
+![image info](/assets/bkgVNy3.png)  
 Using the nmap command above, how many shares have been found?  
 
 ### Questions & Walk:
@@ -204,9 +204,9 @@ Q5. What is Kenobi's user flag (/home/kenobi/user.txt)?
 
 ## Task 3: Privilege Escalation with Path Variable Manipulation 
 
-![image info](./assets/suid.png)  
+![image info](/assets/suid.png)  
 Lets first understand what what SUID, SGID and Sticky Bits are.  
-![image info](./assets/suid2.png) 
+![image info](/assets/suid2.png) 
 
 ### Questions & Walk:
 
