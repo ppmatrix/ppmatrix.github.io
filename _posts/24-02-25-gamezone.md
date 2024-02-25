@@ -5,7 +5,7 @@ categories: [CyberSecurity, CTF]
 tags: [thm, easy, nmap]
 ---
 
-![Basic Pentesting](/assets/gamezone.png){: .right }{: w="200" h="200" }
+![Basic Pentesting](/assets/gamezone.jpeg){: .right }{: w="200" h="200" }
 
 ## Walkthrough
 [https://tryhackme.com/room/gamezone](https://tryhackme.com/room/gamezone)
