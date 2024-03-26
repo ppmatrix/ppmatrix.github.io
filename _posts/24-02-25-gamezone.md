@@ -46,8 +46,6 @@ In our GameZone machine, when you attempt to login, it will take your inputted v
 
 Here is a potential place of vulnerability, as you can input your username as another SQL query. This will take the query write, place and execute it.
 
-
-
 > "No answer needed"
 
 Q2. Lets use what we've learnt above, to manipulate the query and login without any legitimate credentials.
@@ -59,7 +57,7 @@ The SQL query that now gets executed on the web server is as follows:
 SELECT * FROM users WHERE username = admin AND password := ' or 1=1 -- -
 
 The extra SQL we inputted as our password has changed the above query to break the initial query and proceed (with the admin user) if 1==1, then comment the rest of the query to stop it breaking.
-
+ ..
 
 > "No answer needed"
 
@@ -68,6 +66,44 @@ Q3. GameZone doesn't have an admin user in the database, however you can still l
 Use ' or 1=1 -- - as your username and leave the password blank.
 
 When you've logged in, what page do you get redirected to?
+
+> "portal.php"
+
+### MyWalk
+
+Just type "' or 1=1 -- -" in the user login, leaving password blank
+
+
+## Task 3: Using SQLMap
+
+### Questions
+
+Q1. We're going to use SQLMap to dump the entire database for GameZone.
+
+Using the page we logged into earlier, we're going point SQLMap to the game review search feature.
+
+First we need to intercept a request made to the search feature using BurpSuite.
+
+ 
+
+Save this request into a text file. We can then pass this into SQLMap to use our authenticated user session.
+
+-r uses the intercepted request you saved earlier
+--dbms tells SQLMap what type of database management system it is
+--dump attempts to outputs the entire database
+
+SQLMap will now try different methods and identify the one thats vulnerable. Eventually, it will output the database.
+
+In the users table, what is the hashed password?
+
+
+> ""
+
+Q2. What was the username associated with the hashed password?
+
+> ""
+
+Q3. What was the other table name?
 
 > ""
 
